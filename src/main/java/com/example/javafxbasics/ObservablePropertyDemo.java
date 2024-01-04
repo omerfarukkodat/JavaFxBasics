@@ -1,2 +1,17 @@
-package com.example.javafxbasics;public class ObservablePropertyDemo {
+package com.example.javafxbasics;
+
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+
+public class ObservablePropertyDemo {
+    public static void main(String[] args) {
+        DoubleProperty balance = new SimpleDoubleProperty();
+        balance.addListener(observable -> {
+                    System.out.println("The new value is " + balance.doubleValue());
+
+        });
+        balance.set(4.5);
+    }
 }
